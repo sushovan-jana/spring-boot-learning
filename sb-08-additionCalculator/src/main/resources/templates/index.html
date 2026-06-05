@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>This page shows you the addition result</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: center;
+            color: #444;
+        }
+
+        span {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Addition Calculator</h2>
+
+        <p>
+            Addition Result is :
+            <span th:text="${sum}"></span>
+        </p>
+
+        <hr>
+
+        <form action="http://localhost:8080/api/addDigits" method="get">
+
+            <label>Enter First Number :</label>
+            <input type="text" name="a" required>
+
+            <label>Enter Second Number :</label>
+            <input type="text" name="b" required>
+
+            <input type="submit" value="Calculate">
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
